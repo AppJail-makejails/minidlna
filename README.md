@@ -8,6 +8,8 @@ sourceforge.net/projects/minidlna
 
 ### Standalone
 
+To configure your MiniDLNA you must keep the following in mind: each parameter has a value, it must be prefixed with `MINIDLNA_` and the rest must be in uppercase and must only contain letters and underscores.
+
 ```sh
 appjail makejail \
     -j minidlna \
