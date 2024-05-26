@@ -1,0 +1,16 @@
+MINIDLNA_CONFIG="/usr/local/etc/minidlna.conf"
+
+flush()
+{
+	echo -n > "${MINIDLNA_CONFIG}"
+}
+
+option()
+{
+	printf "%s=%s\n" "$1" "$2" >> "${MINIDLNA_CONFIG}"
+}
+
+info()
+{
+	echo "======> $* <======"
+}

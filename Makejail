@@ -1,0 +1,19 @@
+INCLUDE options/options.makejail
+
+ARG minidlna_tag=13.3
+
+FROM --entrypoint gh+AppJail-makejails/minidlna minidlna:${minidlna_tag}
+
+CMD echo "======> Installing scripts ... <======"
+COPY --verbose scripts
+WORKDIR /scripts
+RUN /scripts/configure-minidlna.sh
+
+CMD echo "======> Uninstalling scripts ... <======"
+CMD rm -rf /scripts
+
+CMD echo "======> Enabling minidlna ... <======"
+SYSRC minidlna_enable=YES
+
+CMD echo "======> Starting minidlna ... <======"
+SERVICE minidlna start

@@ -1,0 +1,16 @@
+tags: 13.3
+13.3.arch: amd64
+13.3.name: "minidlna"
+13.3.timestamp.amd64: 1716687997
+13.3.sum.amd64: 14c6515cf7c25c43df1a056f80e40a1b8fbd51d83b996f6111d71f6a0272ff18
+13.3.size.amd64: 154935644
+13.3.source.amd64: "http://appjail.hpc.at/minidlna/13.3-amd64-image.appjail"
+13.3.source.amd64+: "https://images.all101bsd.download/minidlna/13.3-amd64-image.appjail"
+tags+: 14.0
+14.0.arch: amd64
+14.0.name: "minidlna"
+14.0.timestamp.amd64: 1716688643
+14.0.sum.amd64: 0eef29721b88384825c094ac44987931bfb1233986abcc4a6c390c20a1c43efc
+14.0.size.amd64: 154059915
+14.0.source.amd64: "http://appjail.hpc.at/minidlna/14.0-amd64-image.appjail"
+14.0.source.amd64+: "https://images.all101bsd.download/minidlna/14.0-amd64-image.appjail"
