@@ -78,6 +78,10 @@ volumes:
 DIRECTOR_PROJECT=minidlna
 ```
 
+### Arguments
+
+* `minidlna_tag` (default: `13.3`): See [#tags](#tags).
+
 ## Tags
 
 | Tag    | Arch    | Version        | Type   |
