@@ -14,10 +14,14 @@ To configure your MiniDLNA you must keep the following in mind: each parameter h
 appjail makejail \
     -j minidlna \
     -f gh+AppJail-makejails/minidlna \
-    -o virtualnet=":<random> default" \
-    -o expose=8200 \
-    -o expose="1900 proto:udp" \
-    -o nat \
+    -o bridge="iface:jext minidlna" \
+    -o dhcp="sb_minidlna" \
+    -o macaddr="sb_minidlna:58-9c-fc-00-00-10" \
+    -o mount_devfs \
+    -o device='include $devfsrules_hide_all' \
+    -o device='include $devfsrules_unhide_basic' \
+    -o device='include $devfsrules_unhide_login' \
+    -o device="path 'bpf*' unhide" \
     -o fstab="/tmp/media /media nullfs ro" \
     -V MINIDLNA_MEDIA_DIR=/media \
     -V MINIDLNA_INOTIFY=yes \
@@ -38,21 +42,26 @@ appjail makejail \
 **appjail-director.yml**:
 
 ```yaml
-options:
-  - virtualnet: ':<random> default'
-  - nat:
-
 services:
   dlna:
     name: minidlna
     makejail: gh+AppJail-makejails/minidlna
     options:
-      - expose: '8200'
-      - expose: '1900 proto:udp'
+      - bridge: !ENV 'iface:${EXT_IF} ${INT_IF}'
+      - dhcp: !ENV 'sb_${INT_IF}'
+      - macaddr: !ENV 'sb_${INT_IF}:${MACADDR}'
+      - mount_devfs:
+      - device: "include $devfsrules_hide_all"
+      - device: "include $devfsrules_unhide_basic"
+      - device: "include $devfsrules_unhide_login"
+      - device: "path 'bpf*' unhide"
+    volumes:
+      - movies: /media
     environment:
       - MINIDLNA_MEDIA_DIR: '/media'
       - MINIDLNA_INOTIFY: 'yes'
       - MINIDLNA_FRIENDLY_NAME: 'Home Media Server'
+      - MINIDLNA_STRICT_DLNA: no
       - MINIDLNA_ENABLE_TIVO: 'yes'
       - MINIDLNA_ALBUM_ART_NAMES: 'Cover.jpg/cover.jpg/AlbumArtSmall.jpg/albumartsmall.jpg/AlbumArt.jpg/albumart.jpg/Album.jpg/album.jpg/Folder.jpg/folder.jpg/Thumb.jpg/thumb.jpg'
       - MINIDLNA_INOTIFY: 'yes'
@@ -62,8 +71,8 @@ services:
       - MINIDLNA_NOTIFY_INTERVAL: '900'
       - MINIDLNA_SERIAL: '12345678'
       - MINIDLNA_MODEL_NUMBER: '1'
-    volumes:
-      - media: /media
+    arguments:
+      - minidlna_tag: 14.1
 
 volumes:
   media:
@@ -76,6 +85,9 @@ volumes:
 
 ```
 DIRECTOR_PROJECT=minidlna
+EXT_IF=jext
+INT_IF=minidlna
+MACADDR=58-9c-fc-00-00-10
 ```
 
 ### Arguments
