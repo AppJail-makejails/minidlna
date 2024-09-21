@@ -92,11 +92,11 @@ MACADDR=58-9c-fc-00-00-10
 
 ### Arguments
 
-* `minidlna_tag` (default: `13.3`): See [#tags](#tags).
+* `minidlna_tag` (default: `13.4`): See [#tags](#tags).
 
 ## Tags
 
 | Tag    | Arch    | Version        | Type   |
 | ------ | ------- | -------------- | ------ |
-| `13.3` | `amd64` | `13.3-RELEASE` | `thin` |
+| `13.4` | `amd64` | `13.4-RELEASE` | `thin` |
 | `14.1` | `amd64` | `14.1-RELEASE` | `thin` |

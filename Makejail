@@ -1,6 +1,6 @@
 INCLUDE options/options.makejail
 
-ARG minidlna_tag=13.3
+ARG minidlna_tag=13.4
 
 FROM --entrypoint gh+AppJail-makejails/minidlna minidlna:${minidlna_tag}
 
