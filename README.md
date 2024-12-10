@@ -72,7 +72,7 @@ services:
       - MINIDLNA_SERIAL: '12345678'
       - MINIDLNA_MODEL_NUMBER: '1'
     arguments:
-      - minidlna_tag: 14.1
+      - minidlna_tag: 14.2
 
 volumes:
   media:
@@ -99,4 +99,4 @@ MACADDR=58-9c-fc-00-00-10
 | Tag    | Arch    | Version        | Type   |
 | ------ | ------- | -------------- | ------ |
 | `13.4` | `amd64` | `13.4-RELEASE` | `thin` |
-| `14.1` | `amd64` | `14.1-RELEASE` | `thin` |
+| `14.2` | `amd64` | `14.2-RELEASE` | `thin` |
