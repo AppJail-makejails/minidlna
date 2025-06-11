@@ -1,16 +1,17 @@
 tags+: 13.5
 13.5.arch: amd64
 13.5.name: "minidlna"
-13.5.timestamp.amd64: 1747783663
-13.5.sum.amd64: 397c8f7b99f499253606da32500ed4345c76687bcb086046d86be46de08b40e3
-13.5.size.amd64: 186254648
+13.5.timestamp.amd64: 1749599840
+13.5.sum.amd64: 2b72cd567db60640bf4e8969a9fc8aadb15a64a8390ca277d0c6e810022c7288
+13.5.size.amd64: 186405857
 13.5.source.amd64: "https://images.all101bsd.download/minidlna/13.5-amd64-image.appjail"
 13.5.source.amd64+: "http://appjail.hpc.at/minidlna/13.5-amd64-image.appjail"
 tags+: 14.2
 14.2.arch: amd64
 14.2.name: "minidlna"
-14.2.timestamp.amd64: 1747783997
-14.2.sum.amd64: c0c092c97dc66d16977ddf14df193e89c00c384354d5042904100d6f28bce92d
-14.2.size.amd64: 185838900
+14.2.timestamp.amd64: 1749600034
+14.2.sum.amd64: 3a6be132f85b73d735582cc9e5aea848117969218f9aa6b3f902e15cdf77a04d
+14.2.size.amd64: 185450914
 14.2.source.amd64: "https://images.all101bsd.download/minidlna/14.2-amd64-image.appjail"
 14.2.source.amd64+: "http://appjail.hpc.at/minidlna/14.2-amd64-image.appjail"
+maintenance: "This image is uploading, please wait a moment and try again. If you are importing this image using a Makejail that has the '--<name>_ajspec' argument, you can use the 'reproduce' method to use 'appjail-reproduce'. See 'appjail-image(5)' for details."
