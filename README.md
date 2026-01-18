@@ -72,7 +72,7 @@ services:
       - MINIDLNA_SERIAL: '12345678'
       - MINIDLNA_MODEL_NUMBER: '1'
     arguments:
-      - minidlna_tag: 14.3
+      - minidlna_tag: 15
 
 volumes:
   media:
@@ -92,12 +92,12 @@ MACADDR=58-9c-fc-00-00-10
 
 ### Arguments
 
-* `minidlna_tag` (default: `13.5`): See [#tags](#tags).
+* `minidlna_tag` (default: `14.3`): See [#tags](#tags).
 * `minidlna_ajspec` (default: `gh+AppJail-makejails/minidlna`): Entry point where the `appjail-ajspec(5)` file is located.
 
 ## Tags
 
 | Tag    | Arch    | Version        | Type   |
 | ------ | ------- | -------------- | ------ |
-| `13.5` | `amd64` | `13.5-RELEASE` | `thin` |
 | `14.3` | `amd64` | `14.3-RELEASE` | `thin` |
+| `15` | `amd64` | `15` | `thin` |

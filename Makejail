@@ -1,6 +1,6 @@
 INCLUDE options/options.makejail
 
-ARG minidlna_tag=13.5
+ARG minidlna_tag=14.3
 ARG minidlna_ajspec=gh+AppJail-makejails/minidlna
 
 FROM --entrypoint "${minidlna_ajspec}" minidlna:${minidlna_tag}
