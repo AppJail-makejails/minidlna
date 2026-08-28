@@ -1,20 +1,6 @@
-INCLUDE options/options.makejail
+ARG minidlna_from=ghcr.io/appjail-makejails/minidlna
+ARG minidlna_tag=latest
 
-ARG minidlna_tag=14.3
-ARG minidlna_ajspec=gh+AppJail-makejails/minidlna
-
-FROM --entrypoint "${minidlna_ajspec}" minidlna:${minidlna_tag}
-
-CMD echo "======> Installing scripts ... <======"
-COPY --verbose scripts
-WORKDIR /scripts
-RUN /scripts/configure-minidlna.sh
-
-CMD echo "======> Uninstalling scripts ... <======"
-CMD rm -rf /scripts
-
-CMD echo "======> Enabling minidlna ... <======"
-SYSRC minidlna_enable=YES
-
-CMD echo "======> Starting minidlna ... <======"
-SERVICE minidlna start
+OPTION container=boot
+OPTION overwrite=force
+OPTION from=${minidlna_from}:${minidlna_tag}
